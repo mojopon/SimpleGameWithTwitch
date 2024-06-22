@@ -37,9 +37,19 @@ public class TwitchInput : MonoBehaviour
     private void HandleTwitchChatMessage(TwitchChatMessage twitchChatMessage) 
     {
         var command = twitchChatMessage.BotCommand;
-        if (command == "login") 
+        var id = twitchChatMessage.UserId;
+        var playerName = twitchChatMessage.DisplayName;
+        if (command == "login")
         {
-            Login(twitchChatMessage.UserId, twitchChatMessage.DisplayName);
+            Login(id, playerName);
+        }
+        else if (command == "logout")
+        {
+            Logout(id);
+        }
+        else if (command == "changecolor") 
+        {
+            ChangeColor(id);
         }
     }
 
