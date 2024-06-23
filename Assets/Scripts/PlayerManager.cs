@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,7 +13,7 @@ public class PlayerManager : MonoBehaviour
         area = FindObjectOfType<Area>();
     }
 
-    public void SpawnPlayer(string id, string playerName) 
+    public void SpawnPlayer(string id, string playerName)
     {
         if (string.IsNullOrEmpty(id)) { return; }
         if (IsPlayerExist(id)) { return; }
@@ -27,9 +26,9 @@ public class PlayerManager : MonoBehaviour
         playerDictionary.Add(id, player);
     }
 
-    public void DeletePlayer(string id) 
+    public void DeletePlayer(string id)
     {
-        if(!IsPlayerExist(id)) { return; }
+        if (!IsPlayerExist(id)) { return; }
 
         var player = playerDictionary[id];
         Destroy(player.gameObject);
@@ -37,7 +36,7 @@ public class PlayerManager : MonoBehaviour
         playerDictionary.Remove(id);
     }
 
-    public void ChangePlayerColor(string id) 
+    public void ChangePlayerColor(string id)
     {
         if (!IsPlayerExist(id)) { return; }
 
@@ -45,7 +44,7 @@ public class PlayerManager : MonoBehaviour
         player.ChangePlayerColor();
     }
 
-    private bool IsPlayerExist(string id) 
+    private bool IsPlayerExist(string id)
     {
         return playerDictionary.ContainsKey(id);
     }

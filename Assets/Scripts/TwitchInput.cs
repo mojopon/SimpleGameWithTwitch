@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UniRx;
 using UniTwitchClient.Chat;
 using UniTwitchClient.Chat.Models;
+using UnityEngine;
 
 public class TwitchInput : MonoBehaviour
 {
@@ -34,7 +32,7 @@ public class TwitchInput : MonoBehaviour
         client?.Dispose();
     }
 
-    private void HandleTwitchChatMessage(TwitchChatMessage twitchChatMessage) 
+    private void HandleTwitchChatMessage(TwitchChatMessage twitchChatMessage)
     {
         var command = twitchChatMessage.BotCommand;
         var id = twitchChatMessage.UserId;
@@ -47,13 +45,13 @@ public class TwitchInput : MonoBehaviour
         {
             Logout(id);
         }
-        else if (command == "changecolor") 
+        else if (command == "changecolor")
         {
             ChangeColor(id);
         }
     }
 
-    private void Login(string id, string playerName) 
+    private void Login(string id, string playerName)
     {
         playerManager.SpawnPlayer(id, playerName);
     }

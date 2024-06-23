@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,16 +23,16 @@ public class Player : MonoBehaviour
         meshRenderer = GetComponent<MeshRenderer>();
     }
 
-    public void SetPlayerName(string playerName) 
+    public void SetPlayerName(string playerName)
     {
         NameTextMesh.text = playerName;
     }
 
     [ContextMenu("Change Player Color")]
-    public void ChangePlayerColor() 
+    public void ChangePlayerColor()
     {
         currentColor++;
-        if (currentColor >= colorList.Count) 
+        if (currentColor >= colorList.Count)
         {
             currentColor = 0;
         }
